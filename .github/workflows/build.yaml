@@ -53,11 +53,11 @@ jobs:
         run: |
           set -ueo pipefail
 
-          rpm_ostree_version="$(docker run --rm rpm-ostree:latest 'rpm-ostree --version' | sed -En -e '/^.*Version:/!d' -e \"s/.*Version:\s+'([^']+)'.*/\1/\"  -e p)"
+          rpm_ostree_version="$(docker run --rm rpm-ostree:latest 'rpm-ostree --version' | sed -En -e '/^.*Version:/!d' -e "s/.*Version:\s+'([^']+)'.*/\1/"  -e p)"
           echo "::debug::Setting rpm_ostree_version to ${rpm_ostree_version}"
           echo "::set-output name=rpm_ostree_version::${rpm_ostree_version}"
           
-          ostree_version="$(docker run --rm rpm-ostree:latest 'ostree --version' | sed -En -e '/^.*Version:/!d' -e \"s/.*Version:\s+'([^']+)'.*/\1/\"  -e p)"
+          ostree_version="$(docker run --rm rpm-ostree:latest 'ostree --version' | sed -En -e '/^.*Version:/!d' -e "s/.*Version:\s+'([^']+)'.*/\1/"  -e p)"
           echo "::debug::Setting ostree_version to ${ostree_version}"
           echo "::set-output name=ostree_version::${ostree_version}"
 
