@@ -71,3 +71,4 @@ jobs:
           push: true
           tags: |
             ghcr.io/${{ github.repository_owner }}/rpm-ostree:${{ steps.build_info.outputs.rpm_ostree_version }}-${{ steps.build_info.outputs.ostree_version }}
+            ghcr.io/${{ github.repository_owner }}/rpm-ostree:latest
